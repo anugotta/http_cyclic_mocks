@@ -1,4 +1,4 @@
-# Cyclic Mock Http Client
+# Cyclic Mock Client
 
 A Simple Dart library for easily mocking multiple HTTP responses for same route with Dio.
 
