@@ -32,30 +32,35 @@ Then, run flutter pub get to install the package.
 
 Here’s an example of how to use `http_cyclic_mocks` in your project:
 
-```import 'package:dio/dio.dart';
-import 'package:mock_http_client/mock_http_client.dart';
+```
+import 'package:dio/dio.dart';
+import 'package:http_cyclic_mocks/http_cyclic_mocks.dart';
 
 void main() async {
   final dio = Dio();
-  final mockHttpClient = MockHttpClient(dio);
+  final mockHttpClient = CyclicMockClient(dio);
 
   mockHttpClient.addMockResponses('/route1', [
-    MockResponse(data: {'message': 'Route 1 - Response 1'}, statusCode: 200),
-    MockResponse(data: {'message': 'Route 1 - Response 2'}, statusCode: 200),
+    MockResponse(data: {'message': 'Not Found'}, statusCode: 200),
+    MockResponse(data: {'message': 'Route 1 - SUCCESS'}, statusCode: 200),
   ]);
 
   mockHttpClient.addMockResponses('/route2', [
-    MockResponse(data: {'message': 'Route 2 - Response 1'}, statusCode: 200),
-    MockResponse(data: {'message': 'Route 2 - Response 2'}, statusCode: 200),
-    MockResponse(data: {'message': 'Route 2 - Response 3'}, statusCode: 200),
+    MockResponse(data: {'message': 'Error Response'}, statusCode: 400),
+    MockResponse(data: {'message': 'Route 2 - SUCCESS'}, statusCode: 200),
+    MockResponse(data: {'message': 'ERROR - Route 2'}, statusCode: 404),
   ]);
 
-  // Example of making requests to see the cycling in action
   for (int i = 0; i < 6; i++) {
     final response1 = await dio.get('/route1');
     print(response1.data);
-    final response2 = await dio.get('/route2');
+
+    try{
+     final response2 = await dio.get('/route2');
     print(response2.data);
+    }catch(e){
+    print(e);
+    }
   }
 }
 ```
@@ -76,7 +81,7 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/anugotta/FlipTimerView/blob/master/LICENSE) file for details.
 
 ## Issues
 
