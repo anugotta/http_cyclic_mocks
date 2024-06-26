@@ -1,7 +1,7 @@
 name: http_cyclic_mocks
 description: A Dart library for mocking HTTP responses with Dio.
 version: 0.0.1
-homepage: https://github.com/your_username/mock_http_client
+homepage: https://github.com/anugotta/http_cyclic_mocks
 
 environment:
   sdk: '>=3.4.1 <4.0.0'

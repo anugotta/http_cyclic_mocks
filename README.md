@@ -1,39 +1,83 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Cyclic Mock Http Client
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Simple Dart library for easily mocking multiple HTTP responses for same route with Dio.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Introduction
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+`http_cyclic_mocks` is a lightweight library designed to facilitate the mocking of HTTP responses when using the Dio HTTP client. It allows developers to define mock responses for specific routes, cycling through multiple responses if needed. This is particularly useful for unit testing and development environments where actual network requests need to be avoided.
+
+## Description
+
+This library provides an easy-to-use interface for mocking HTTP responses in your Dart and Flutter projects. By using `CyclicMockClient`, you can simulate different server responses without having to rely on an actual backend. The library supports multiple routes and allows you to cycle through predefined responses for each route.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Mock HTTP responses for specific routes.
+- Support for multiple responses per route.
+- Easy integration with Dio.
+- Useful for unit testing and development environments.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the following dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  http_cyclic_mocks: ^0.0.1
+  ```
+
+Then, run flutter pub get to install the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Here’s an example of how to use `http_cyclic_mocks` in your project:
 
-```dart
-const like = 'sample';
+```import 'package:dio/dio.dart';
+import 'package:mock_http_client/mock_http_client.dart';
+
+void main() async {
+  final dio = Dio();
+  final mockHttpClient = MockHttpClient(dio);
+
+  mockHttpClient.addMockResponses('/route1', [
+    MockResponse(data: {'message': 'Route 1 - Response 1'}, statusCode: 200),
+    MockResponse(data: {'message': 'Route 1 - Response 2'}, statusCode: 200),
+  ]);
+
+  mockHttpClient.addMockResponses('/route2', [
+    MockResponse(data: {'message': 'Route 2 - Response 1'}, statusCode: 200),
+    MockResponse(data: {'message': 'Route 2 - Response 2'}, statusCode: 200),
+    MockResponse(data: {'message': 'Route 2 - Response 3'}, statusCode: 200),
+  ]);
+
+  // Example of making requests to see the cycling in action
+  for (int i = 0; i < 6; i++) {
+    final response1 = await dio.get('/route1');
+    print(response1.data);
+    final response2 = await dio.get('/route2');
+    print(response2.data);
+  }
+}
 ```
 
-## Additional information
+## Example
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+A complete example is available in the example directory. You can run it to see the mock HTTP client in action.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+	1.	Fork the repository.
+	2.	Create a new branch for your feature or bugfix.
+	3.	Make your changes and commit them.
+	4.	Push your changes to your fork.
+	5.	Create a pull request with a description of your changes.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Issues
+
+If you encounter any issues, please open an issue on GitHub: https://github.com/anugotta/http_cyclic_mocks/issues

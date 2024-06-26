@@ -1,3 +1,4 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial Release.
+* Ability to mock an array of responses for unique routes
