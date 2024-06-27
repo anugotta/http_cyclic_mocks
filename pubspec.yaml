@@ -1,6 +1,6 @@
 name: http_cyclic_mocks
 description: A Simple and lightweight Dart library for mocking/overriding HTTP responses with Dio. In this library you can enqueue multiple responses for a single route/api endpoint.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/anugotta/http_cyclic_mocks
 repository: https://github.com/anugotta/http_cyclic_mocks
 

@@ -4,7 +4,7 @@ A Simple and lightweight Dart library for mocking/overriding HTTP responses with
 
 ## Introduction
 
-`http_cyclic_mocks` is a lightweight library designed to facilitate the mocking of HTTP responses when using the Dio HTTP client. It allows developers to define mock responses for specific routes, cycling through multiple responses if needed. This helps avoid running the application mutliple times to mock different responses/scenarios for the same route.
+`http_cyclic_mocks` is a lightweight library designed to facilitate the mocking of HTTP responses when using the Dio HTTP client. It allows developers to define mock responses for specific routes, cycling through multiple responses if needed. This helps avoid running the application mutliple times to mock different responses/scenarios for the same route. Find in [pub.dev](https://pub.dev/packages/http_cyclic_mocks) 
 
 ## Features
 

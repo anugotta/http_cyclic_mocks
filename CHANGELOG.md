@@ -1,3 +1,6 @@
+## 0.0.3
+* Code formatting and general housekeeping
+
 ## 0.0.2
 * Code formatting and cleanups
 
