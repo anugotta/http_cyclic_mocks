@@ -1,3 +1,6 @@
+## 0.0.2
+* Code formatting and cleanups
+
 ## 0.0.1
 
 * Initial Release.
