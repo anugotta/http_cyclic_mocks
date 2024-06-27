@@ -18,7 +18,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  http_cyclic_mocks: ^0.0.2
+  http_cyclic_mocks: ^0.0.4
   ```
 
 Then, run flutter pub get to install the package.
@@ -70,7 +70,7 @@ Contributions are welcome! This library is at a beginner stage with lot of scope
 
 ## License
 
-This project is licensed under the BSD 3-Clause License - see the [LICENSE](https://github.com/anugotta/FlipTimerView/blob/master/LICENSE) file for details.
+This project is licensed under the BSD 3-Clause License - see the [LICENSE](https://github.com/anugotta/http_cyclic_mocks/blob/main/LICENSE) file for details.
 
 ## Issues
 
