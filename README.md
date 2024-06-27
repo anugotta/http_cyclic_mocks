@@ -1,21 +1,16 @@
-# Cyclic Mock Client
+# Mock Multiple Responses for single route / endpoint
 
-A Simple Dart library for easily mocking multiple HTTP responses for same route with Dio.
+A Simple and lightweight Dart library for mocking/overriding HTTP responses with Dio. In this library you can add multiple responses for a single route/api endpoint.
 
 ## Introduction
 
-`http_cyclic_mocks` is a lightweight library designed to facilitate the mocking of HTTP responses when using the Dio HTTP client. It allows developers to define mock responses for specific routes, cycling through multiple responses if needed. This is particularly useful for unit testing and development environments where actual network requests need to be avoided.
-
-## Description
-
-This library provides an easy-to-use interface for mocking HTTP responses in your Dart and Flutter projects. By using `CyclicMockClient`, you can simulate different server responses without having to rely on an actual backend. The library supports multiple routes and allows you to cycle through predefined responses for each route.
+`http_cyclic_mocks` is a lightweight library designed to facilitate the mocking of HTTP responses when using the Dio HTTP client. It allows developers to define mock responses for specific routes, cycling through multiple responses if needed. This helps avoid running the application mutliple times to mock different responses/scenarios for the same route.
 
 ## Features
 
 - Mock HTTP responses for specific routes.
 - Support for multiple responses per route.
 - Easy integration with Dio.
-- Useful for unit testing and development environments.
 
 ## Installation
 
@@ -23,7 +18,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  http_cyclic_mocks: ^0.0.1
+  http_cyclic_mocks: ^0.0.2
   ```
 
 Then, run flutter pub get to install the package.
@@ -71,13 +66,7 @@ A complete example is available in the example directory. You can run it to see 
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps to contribute:
-
-	1.	Fork the repository.
-	2.	Create a new branch for your feature or bugfix.
-	3.	Make your changes and commit them.
-	4.	Push your changes to your fork.
-	5.	Create a pull request with a description of your changes.
+Contributions are welcome! This library is at a beginner stage with lot of scope for improvements, so feel free to contribute.
 
 ## License
 
