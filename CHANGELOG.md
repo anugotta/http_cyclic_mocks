@@ -1,3 +1,6 @@
+## 0.0.4
+* Edited readme
+
 ## 0.0.3
 * Code formatting and general housekeeping
 
