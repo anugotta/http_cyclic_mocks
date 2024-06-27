@@ -20,11 +20,11 @@ void main() async {
     final response1 = await dio.get('/route1');
     print(response1.data);
 
-    try{
-     final response2 = await dio.get('/route2');
-    print(response2.data);
-    }catch(e){
-    print(e);
+    try {
+      final response2 = await dio.get('/route2');
+      print(response2.data);
+    } catch (e) {
+      print(e);
     }
   }
 }
