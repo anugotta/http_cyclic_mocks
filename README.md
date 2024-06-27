@@ -81,7 +81,7 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/anugotta/FlipTimerView/blob/master/LICENSE) file for details.
+This project is licensed under the BSD 3-Clause License - see the [LICENSE](https://github.com/anugotta/FlipTimerView/blob/master/LICENSE) file for details.
 
 ## Issues
 
